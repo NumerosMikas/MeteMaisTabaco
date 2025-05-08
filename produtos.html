@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mete Mais Tabaco - Produtos</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+       
+        .top-bar {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        
+        main {
+            padding: 20px;
+        }
+
+        
+        .hero {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            color: #333;
+        }
+
+        
+        .about {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .about h3 {
+            color: #4CAF50;
+        }
+
+        
+        .video {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .servicos {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .servicos ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .servicos li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        .menu-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color: white;
+        }
+
+        .side-menu {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #4CAF50;
+        color: white;
+        overflow-y: auto;
+        transition: 0.3s;
+        padding-top: 60px;
+        }
+
+        .side-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+
+        .side-menu ul li {
+        padding: 8px 16px;
+        }
+
+        .side-menu ul li a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        }
+
+        .side-menu ul li a:hover {
+        background-color: #4CAF50;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <img src="Imagens/tabaco_logo.png" width="300px">
+        </div>
+    </header>
+
+    <main>
+      <section class="about">
+        <h2>Imagens com AI</h2>
+        <br>
+        <img src="Imagens/f61cd0f9-786d-439f-9c9a-189bd1b60811.jpeg" width="350">
+        <img src="Imagens/02f7e420-91d4-4cca-baa3-ae6a906d73aa.jpeg" width="350">
+        <img src="Imagens/4baf48a6-bfe0-4034-beb4-f4669ced050a.jpeg" width="350">
+        <img src="Imagens/c2030f42-d19d-4738-89ed-df3973fff5e9.jpeg" width="350">
+        <img src="Imagens/64399efd-0bde-486f-bffe-76f9d09322b8.jpeg" width="350">
+        <img src="Imagens/d6c54fbf-a5b7-4240-b090-01bffe24df36.jpeg" width="350">
+        <img src="Imagens/54a3a7c4-044d-4f31-b549-782d1e4168e1.jpeg" width="350">
+        <img src="Imagens/0daff9d2-1f3a-4135-910a-d28eaa71d968.jpeg" width="350">
+      </section>
+
+      <section class="about">
+        <h2>Imagens sem AI</h2>
+        <br>
+        <img src="Imagens/IMG-20250505-WA0007.jpg" height="550">
+        <img src="Imagens/IMG_20250501_134137.jpg" height="550">
+        <img src="Imagens/IMG_20250501_134159.jpg" height="550">
+      </section>
+
+      <section class="about">
+        <h2>Vídeos</h2>
+        <br>
+        <video controls width="550" height="550">
+        <source src="Imagens/VID-20250423-WA0006.mp4" type="video/mp4">
+        <p>O seu navegador não suporta vídeo HTML. Atualize o seu navegador ou utilize um diferente.</p>
+    </video>
+      </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 por ninguém. Nenhum direito reservado.</p>
+    </footer>
+    
+  <button id="menu-toggle" class="menu-button">☰</button>
+  <div id="side-menu" class="side-menu">
+    <ul>
+        <li><img src="Imagens/tabaco_logo.png" width="200px"></li>
+        <li><a href="abc.html">Casa</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="#">Mais</a></li>
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.getElementById("menu-toggle");
+      const sideMenu = document.getElementById("side-menu");
+
+      menuToggle.addEventListener("click", () => {
+        if (sideMenu.style.left === "0px") {
+          sideMenu.style.left = "-250px";
+        } else {
+          sideMenu.style.left = "0px";
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!sideMenu.contains(event.target) && event.target !== menuToggle) {
+          sideMenu.style.left = "-250px";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
