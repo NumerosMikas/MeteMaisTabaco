@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mete Mais Tabaco - Produtos</title>
+    <style>
+        
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+      }
+
+      .top-bar {
+          background-color: #4CAF50;
+          color: white;
+          text-align: center;
+          padding: 3.5% 0;
+      }
+
+      h1 {
+          font-size: 2em;
+      }
+
+      .readable {
+          cursor: pointer;
+      }
+      
+      main {
+          padding: 1.5%;
+      }
+
+      
+      .hero {
+          background-color: #f1f1f1;
+          padding: 2%;
+          text-align: center;
+          margin-bottom: 2%;
+      }
+
+      .hero h2 {
+          color: #333;
+      }
+
+      
+      .about {
+          background-color: white;
+          padding: 2%;
+          margin-bottom: 2%;
+      }
+
+      .about h3 {
+          color: #4CAF50;
+      }
+
+      
+      .video {
+          background-color: #ffffff;
+          padding: 2%;
+          margin-bottom: 2%;
+      }
+
+      .video-container {
+          position: relative;
+          padding-bottom: 56.25%; 
+          height: 0;
+          overflow: hidden;
+          max-width: 100%;
+          background: #000;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .video-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
+
+      footer {
+          text-align: center;
+          padding: 1%;
+          background-color: #333;
+          color: white;
+      }
+
+      .menu-button {
+          position: absolute;
+          top: 2%;
+          left: 2%;
+          font-size: 300%;
+          cursor: pointer;
+          border: none;
+          background-color: transparent;
+          color: white;
+      }
+
+      .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250%;
+      width: 235px;
+      height: 100%;
+      background-color: #4CAF50;
+      color: white;
+      overflow-y: auto;
+      transition: 0.3s;
+      padding-top: 6%;
+      }
+
+      .side-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      }
+
+      .side-menu ul li {
+      padding: 5% 15px;
+      }
+
+      .side-menu ul li a {
+      text-decoration: none;
+      color: white;
+      display: block;
+      }
+
+      .side-menu ul li a:hover {
+      background-color: #4CAF50;
+      }
+        .thumbnail {
+            max-width: 300px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .overlay.active {
+            display: flex;
+        }
+
+        .overlay .close {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            font-size: 300%;
+            color: white;
+            cursor: pointer;
+        }
+
+        .video-containerC {
+      position: relative;
+      width: 640px;
+      max-width: 100%;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+    }
+    .arrow.left {
+      left: 10px;
+    }
+    .arrow.right {
+      right: 10px;
+    }
+
+    .box {
+          width: 40%;
+          height: 0px;
+          background-color: #4CAF50;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          position: relative;
+          padding: 5%;
+      }
+
+      .labels {
+          display: none;
+          position: absolute;
+          top: 15px;
+          background-color: white;
+          color: #333;
+          width: 100%;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+          padding: 10px;
+      }
+
+      .labels ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+      }
+
+      .labels a:hover{
+        pointer-events: none;
+        cursor: pointer;
+      }
+
+      .labels li {
+          padding: 5px 0;
+          border-bottom: 1px solid #ddd;
+      }
+
+      .labels li:last-child {
+          border-bottom: none;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <img src="tabaco_logo.png" width="300px">
+        </div>
+    </header>
+
+    <main>
+      <section class="about">
+        <h2 class="readable">Vídeos</h2>
+        <br>
+        <center>
+        <div class="video-containerC">
+          <button class="arrow left" onclick="prevVideo()">&#8249;</button>
+          <video id="videoPlayer" controls width="65%">
+            <source src="tiktokcavalo.mp4" type="video/mp4">
+            <p class="readable">O seu navegador não suporta vídeo HTML. Atualize o seu navegador ou utilize um diferente.</p>
+          </video>
+          <button class="arrow right" onclick="nextVideo()">&#8250;</button>
+        </div>
+        </center>
+      </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 por ninguém. Nenhum direito reservado.</p>
+    </footer>
+    
+  <button id="menu-toggle" class="menu-button">☰</button>
+  <div id="side-menu" class="side-menu">
+    <ul>
+        <li><img src="tabaco_logo.png" width="200px"></li>
+        <li><a href="index.html">Casa</a></li>
+        <div class="box" onclick="toggleLabels()">
+        Produtos
+        <div class="labels">
+            <ul>
+                <li><a href="produtos_imagens.html" style="color: #333;">Imagens</a></li>
+                <li><a href="produtos_videos.html" style="color: #333;">Vídeos</a></li>
+                <li>1</li>
+                <li>2</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+    </ul>
+  </div>
+
+  <div class="overlay" id="overlay">
+        <span class="close" onclick="closeFullView()">&times;</span>
+        <img src="" alt="Full View" id="fullImage">
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.getElementById("menu-toggle");
+      const sideMenu = document.getElementById("side-menu");
+
+      menuToggle.addEventListener("click", () => {
+        if (sideMenu.style.left === "0px") {
+          sideMenu.style.left = "-250px";
+        } else {
+          sideMenu.style.left = "0px";
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!sideMenu.contains(event.target) && event.target !== menuToggle) {
+          sideMenu.style.left = "-250px";
+        }
+      });
+    });
+
+    function readText(event) {
+            speechSynthesis.cancel();
+
+            const text = event.target.innerText;
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'pt'; 
+
+            speechSynthesis.speak(utterance);
+        }
+
+        document.querySelectorAll('.readable').forEach(element => {
+            element.addEventListener('click', readText);
+        });
+
+    function showFullView(img) {
+            const overlay = document.getElementById('overlay');
+            const fullImage = document.getElementById('fullImage');
+            fullImage.src = img.src;
+            overlay.classList.add('active');
+        }
+
+    function closeFullView() {
+        const overlay = document.getElementById('overlay');
+        overlay.classList.remove('active');
+    }
+
+    const videoPlayer = document.getElementById('videoPlayer');
+    const videos = ["tiktokcavalo.mp4", "tiktokvideo.mp4", "transiçãovideo.mp4","dogAIvideo.mp4","VID-20250423-WA0006.mp4"];
+    let currentVideoIndex = 0;
+
+    function updateVideo() {
+      videoPlayer.src = videos[currentVideoIndex];
+      videoPlayer.play();
+    }
+
+    function prevVideo() {
+      currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+      updateVideo();
+    }
+
+    function nextVideo() {
+      currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+      updateVideo();
+    }
+
+    function toggleLabels() {
+      const labels = document.querySelector('.labels');
+      labels.style.display = labels.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
