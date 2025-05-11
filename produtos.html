@@ -5,149 +5,173 @@
     <title>Mete Mais Tabaco - Produtos</title>
     <style>
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+      }
+
+      .top-bar {
+          background-color: #4CAF50;
+          color: white;
+          text-align: center;
+          padding: 3.5% 0;
+      }
+
+      h1 {
+          font-size: 2em;
+      }
+
+      .readable {
+          cursor: pointer;
+      }
+      
+      main {
+          padding: 1.5%;
+      }
+
+      
+      .hero {
+          background-color: #f1f1f1;
+          padding: 2%;
+          text-align: center;
+          margin-bottom: 2%;
+      }
+
+      .hero h2 {
+          color: #333;
+      }
+
+      
+      .about {
+          background-color: white;
+          padding: 2%;
+          margin-bottom: 2%;
+      }
+
+      .about h3 {
+          color: #4CAF50;
+      }
+
+      
+      .video {
+          background-color: #ffffff;
+          padding: 2%;
+          margin-bottom: 2%;
+      }
+
+      .video-container {
+          position: relative;
+          padding-bottom: 56.25%; 
+          height: 0;
+          overflow: hidden;
+          max-width: 100%;
+          background: #000;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .video-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
+
+      footer {
+          text-align: center;
+          padding: 1%;
+          background-color: #333;
+          color: white;
+      }
+
+      .menu-button {
+          position: absolute;
+          top: 2%;
+          left: 2%;
+          font-size: 300%;
+          cursor: pointer;
+          border: none;
+          background-color: transparent;
+          color: white;
+      }
+
+      .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250%;
+      width: 235px;
+      height: 100%;
+      background-color: #4CAF50;
+      color: white;
+      overflow-y: auto;
+      transition: 0.3s;
+      padding-top: 6%;
+      }
+
+      .side-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      }
+
+      .side-menu ul li {
+      padding: 5% 15px;
+      }
+
+      .side-menu ul li a {
+      text-decoration: none;
+      color: white;
+      display: block;
+      }
+
+      .side-menu ul li a:hover {
+      background-color: #4CAF50;
+      }
+        .thumbnail {
+            max-width: 300px;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        .thumbnail:hover {
+            transform: scale(1.05);
         }
 
-       
-        .top-bar {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        h1 {
-            font-size: 2em;
-        }
-
-        
-        main {
-            padding: 20px;
-        }
-
-        
-        .hero {
-            background-color: #f1f1f1;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .hero h2 {
-            color: #333;
-        }
-
-        
-        .about {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .about h3 {
-            color: #4CAF50;
-        }
-
-        
-        .video {
-            background-color: #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; 
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .video-container iframe {
-            position: absolute;
+        .overlay {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
         }
 
-        .servicos {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
         }
 
-        .servicos ul {
-            list-style-type: none;
-            padding-left: 20px;
+        .overlay.active {
+            display: flex;
         }
 
-        .servicos li {
-            margin: 10px 0;
-            font-size: 1.1em;
-        }
-
-        
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-        }
-
-        .menu-button {
+        .overlay .close {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 40px;
-            cursor: pointer;
-            border: none;
-            background-color: transparent;
+            top: 2%;
+            right: 2%;
+            font-size: 300%;
             color: white;
-        }
-
-        .side-menu {
-        position: fixed;
-        top: 0;
-        left: -250px;
-        width: 250px;
-        height: 100%;
-        background-color: #4CAF50;
-        color: white;
-        overflow-y: auto;
-        transition: 0.3s;
-        padding-top: 60px;
-        }
-
-        .side-menu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        }
-
-        .side-menu ul li {
-        padding: 8px 16px;
-        }
-
-        .side-menu ul li a {
-        text-decoration: none;
-        color: white;
-        display: block;
-        }
-
-        .side-menu ul li a:hover {
-        background-color: #4CAF50;
+            cursor: pointer;
         }
 
     </style>
@@ -161,33 +185,62 @@
 
     <main>
       <section class="about">
-        <h2>Imagens com AI</h2>
+        <h2 class="readable">Imagens com AI</h2>
         <br>
-        <img src="f61cd0f9-786d-439f-9c9a-189bd1b60811.jpeg" width="350">
-        <img src="02f7e420-91d4-4cca-baa3-ae6a906d73aa.jpeg" width="350">
-        <img src="4baf48a6-bfe0-4034-beb4-f4669ced050a.jpeg" width="350">
-        <img src="c2030f42-d19d-4738-89ed-df3973fff5e9.jpeg" width="350">
-        <img src="64399efd-0bde-486f-bffe-76f9d09322b8.jpeg" width="350">
-        <img src="d6c54fbf-a5b7-4240-b090-01bffe24df36.jpeg" width="350">
-        <img src="54a3a7c4-044d-4f31-b549-782d1e4168e1.jpeg" width="350">
-        <img src="0daff9d2-1f3a-4135-910a-d28eaa71d968.jpeg" width="350">
+        <center>
+        <img src="f61cd0f9-786d-439f-9c9a-189bd1b60811.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
+        <img src="02f7e420-91d4-4cca-baa3-ae6a906d73aa.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
+        <img src="4baf48a6-bfe0-4034-beb4-f4669ced050a.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
+        <img src="c2030f42-d19d-4738-89ed-df3973fff5e9.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
+        <img src="64399efd-0bde-486f-bffe-76f9d09322b8.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
+        <img src="d6c54fbf-a5b7-4240-b090-01bffe24df36.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
+        <img src="54a3a7c4-044d-4f31-b549-782d1e4168e1.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
+        <img src="0daff9d2-1f3a-4135-910a-d28eaa71d968.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
+        </center>
       </section>
 
       <section class="about">
-        <h2>Imagens sem AI</h2>
+        <h2 class="readable">Imagens sem AI</h2>
         <br>
-        <img src="IMG-20250505-WA0007.jpg" height="550">
-        <img src="IMG_20250501_134137.jpg" height="550">
-        <img src="IMG_20250501_134159.jpg" height="550">
+        <center>
+        <img src="IMG-20250505-WA0007.jpg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="17.2%">
+        <img src="IMG_20250501_134137.jpg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
+        <img src="IMG_20250501_134159.jpg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
+        <br>
+        <img src="editedhorsephoto.jpg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" height="200px">
+        <img src="Pidgeon.jpg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" height="200px">
+        </center>
       </section>
 
       <section class="about">
-        <h2>Vídeos</h2>
+        <h2 class="readable">Vídeos</h2>
         <br>
-        <video controls width="550" height="550">
-        <source src="VID-20250423-WA0006.mp4" type="video/mp4">
-        <p>O seu navegador não suporta vídeo HTML. Atualize o seu navegador ou utilize um diferente.</p>
-    </video>
+        <center>
+        <video controls width="22.5%" height="22.5%">
+          <source src="VID-20250423-WA0006.mp4" type="video/mp4">
+          <p class="readable">O seu navegador não suporta vídeo HTML. Atualize o seu navegador ou utilize um diferente.</p>
+        </video>
+        <video controls width="75%" height="22.5%">
+          <source src="henriqueeorusso.mp4" type="video/mp4">
+          <p class="readable">O seu navegador não suporta vídeo HTML. Atualize o seu navegador ou utilize um diferente.</p>
+        </video>
+        <video controls width="22.5%" height="22.5%">
+          <source src="dogAIvideo.mp4" type="video/mp4">
+          <p class="readable">O seu navegador não suporta vídeo HTML. Atualize o seu navegador ou utilize um diferente.</p>
+        </video>
+        <video controls width="22.5%" height="22.5%">
+          <source src="tiktokcavalo.mp4" type="video/mp4">
+          <p class="readable">O seu navegador não suporta vídeo HTML. Atualize o seu navegador ou utilize um diferente.</p>
+        </video>
+        <video controls width="22.5%" height="22.5%">
+          <source src="tiktokvideo.mp4" type="video/mp4">
+          <p class="readable">O seu navegador não suporta vídeo HTML. Atualize o seu navegador ou utilize um diferente.</p>
+        </video>
+        <video controls width="22.5%" height="22.5%">
+          <source src="transiçãovideo.mp4" type="video/mp4">
+          <p class="readable">O seu navegador não suporta vídeo HTML. Atualize o seu navegador ou utilize um diferente.</p>
+        </video>
+        </center>
       </section>
     </main>
 
@@ -204,6 +257,11 @@
         <li><a href="produtos.html">Produtos</a></li>
         <li><a href="#">Mais</a></li>
     </ul>
+  </div>
+
+  <div class="overlay" id="overlay">
+        <span class="close" onclick="closeFullView()">&times;</span>
+        <img src="" alt="Full View" id="fullImage">
   </div>
 
   <script>
@@ -225,6 +283,33 @@
         }
       });
     });
+
+    function readText(event) {
+            speechSynthesis.cancel();
+
+            const text = event.target.innerText;
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'pt'; 
+
+            speechSynthesis.speak(utterance);
+        }
+
+        document.querySelectorAll('.readable').forEach(element => {
+            element.addEventListener('click', readText);
+        });
+
+    function showFullView(img) {
+            const overlay = document.getElementById('overlay');
+            const fullImage = document.getElementById('fullImage');
+            fullImage.src = img.src;
+            overlay.classList.add('active');
+        }
+
+    function closeFullView() {
+        const overlay = document.getElementById('overlay');
+        overlay.classList.remove('active');
+    }
   </script>
 </body>
 </html>
