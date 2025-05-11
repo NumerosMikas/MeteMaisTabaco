@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mete Mais Tabaco</title>
     <style>
-        
         * {
             margin: 0;
             padding: 0;
@@ -20,24 +19,27 @@
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 50px 0;
+            padding: 3.5% 0;
         }
 
         h1 {
             font-size: 2em;
         }
 
+        .readable {
+            cursor: pointer;
+        }
         
         main {
-            padding: 20px;
+            padding: 1.5%;
         }
 
         
         .hero {
             background-color: #f1f1f1;
-            padding: 30px;
+            padding: 2%;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 2%;
         }
 
         .hero h2 {
@@ -47,8 +49,8 @@
         
         .about {
             background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 2%;
+            margin-bottom: 2%;
         }
 
         .about h3 {
@@ -58,8 +60,8 @@
         
         .video {
             background-color: #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 2%;
+            margin-bottom: 2%;
         }
 
         .video-container {
@@ -81,35 +83,18 @@
             height: 100%;
         }
 
-        .servicos {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .servicos ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-
-        .servicos li {
-            margin: 10px 0;
-            font-size: 1.1em;
-        }
-
-        
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 1%;
             background-color: #333;
             color: white;
         }
 
         .menu-button {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 40px;
+            top: 2%;
+            left: 2%;
+            font-size: 300%;
             cursor: pointer;
             border: none;
             background-color: transparent;
@@ -119,14 +104,14 @@
         .side-menu {
         position: fixed;
         top: 0;
-        left: -250px;
-        width: 250px;
+        left: -250%;
+        width: 235px;
         height: 100%;
         background-color: #4CAF50;
         color: white;
         overflow-y: auto;
         transition: 0.3s;
-        padding-top: 60px;
+        padding-top: 6%;
         }
 
         .side-menu ul {
@@ -136,7 +121,7 @@
         }
 
         .side-menu ul li {
-        padding: 8px 16px;
+        padding: 5% 15px;
         }
 
         .side-menu ul li a {
@@ -160,32 +145,29 @@
 
     <main>
         <section class="hero">
-            <h2>Bem-Vindo ao nosso site</h2>
-            <p>Onde todos os desempregados encontram as soluções para as questões que ninguém tem!</p>
+            <h2 class="readable">Bem-Vindo ao nosso site</h2>
+            <p class="readable">Onde todos os desempregados encontram as soluções para as questões que ninguém tem!</p>
         </section>
 
         <section class="about">
-            <h3>Sobre nós</h3>
-            <p>Nós somos os que te vão ajudar a descobrir nada e mais nada</p>
+            <h3 class="readable">Sobre nós</h3>
+            <p class="readable">Nós somos os que te vão ajudar a descobrir nada e mais nada</p>
         </section>
 
-        <section class="video">
-            <h3>O nosso primeiro, e último, podcast</h3>
+        <section class="about">
+            <h3 class="readable">Trailer do nosso podcast</h3>
             <br>
-            <video controls width="100%">
-                <source src="podcast.mp4" type="video/mp4">
-                <p>O seu navegador não suporta vídeo HTML. Atualize o seu navegador ou utilize um diferente.</p>
-        </section>
-
-        <section class="servicos">
-            <h3>Outros produtos</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/watch?v=oTHZ-STwuzc" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
             <br>
-            <ul>
-                <li><a href="AIspeech.html">Produtos com AI</a></li>
-                <li>Produtos sem AI</li>
-                <a href="livro.epub" download="livro.epub">Faz DOWLOAD do nosso novo livro de culinária!</a>
-            </ul>
-            <br>
+            <p class="readable">Queres saber mais? Visita o nosso canal oficial no Youtube:</p>
+            <a href="https://www.youtube.com/@MetemaisTabaco">https://www.youtube.com/@MetemaisTabaco</a>
         </section>
     </main>
 
@@ -223,6 +205,22 @@
         }
       });
     });
+
+    function readText(event) {
+            speechSynthesis.cancel();
+
+            const text = event.target.innerText;
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'pt'; 
+
+            speechSynthesis.speak(utterance);
+        }
+
+        document.querySelectorAll('.readable').forEach(element => {
+            element.addEventListener('click', readText);
+        });
+
   </script>
 </body>
 </html>
