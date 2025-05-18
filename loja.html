@@ -2,10 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mete Mais Tabaco - Produtos - Imagens</title>
+    <title>Mete Mais Tabaco - Loja</title>
     <style>
-        
-      * {
+        * {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
@@ -240,6 +239,43 @@
       .labels li:last-child {
           border-bottom: none;
       }
+
+      .featured-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 5%;
+            padding: 5%;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 1rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none; 
+        }
+
+        a:hover {
+            color: inherit; 
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+        }
+        a h3:hover{
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -250,33 +286,34 @@
     </header>
 
     <main>
-      <section class="about">
-        <h2 class="readable">Imagens com AI</h2>
-        <br>
-        <center>
-        <img src="f61cd0f9-786d-439f-9c9a-189bd1b60811.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
-        <img src="02f7e420-91d4-4cca-baa3-ae6a906d73aa.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
-        <img src="4baf48a6-bfe0-4034-beb4-f4669ced050a.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
-        <img src="c2030f42-d19d-4738-89ed-df3973fff5e9.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
-        <img src="64399efd-0bde-486f-bffe-76f9d09322b8.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
-        <img src="d6c54fbf-a5b7-4240-b090-01bffe24df36.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
-        <img src="54a3a7c4-044d-4f31-b549-782d1e4168e1.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
-        <img src="0daff9d2-1f3a-4135-910a-d28eaa71d968.jpeg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
-        </center>
-      </section>
+        <section class="hero">
+            <h2 class="readable">Loja Oficial</h2>
+            <p class="readable">Nós vendemos apenas com o objetivo de obtermos mais lucro.</p>
+        </section>
 
-      <section class="about">
-        <h2 class="readable">Imagens sem AI</h2>
-        <br>
-        <center>
-        <img src="IMG-20250505-WA0007.jpg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="17.5%">
-        <img src="IMG_20250501_134137.jpg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
-        <img src="IMG_20250501_134159.jpg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" width="22.5%">
-        <br>
-        <img src="editedhorsephoto.jpg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" height="200px">
-        <img src="Pidgeon.jpg" alt="Thumbnail" class="thumbnail" onclick="showFullView(this)" height="200px">
-        </center>
-      </section>
+        <section class="about">
+        <section class="featured-products">
+        <a href="loja_p1.html"><div class="product">
+            <img src="shirt3.png" alt="Camisola Mete+Tabaco">
+            <h3>Camisola Mete+Tabaco</h3>
+            <p>19.99€</p>
+        </div></a>
+
+        <a href="loja_p2.html"><div class="product">
+            <img src="hat.png" alt="Chapéu Mete+Tabaco">
+            <h3>Chapéu Mete+Tabaco</h3>
+            <p>9.99€</p>
+        </div></a>
+
+        <a href="loja_p3.html"><div class="product">
+            <img src="sandals.png" alt="Chinelos Mete+Tabaco">
+            <h3>Chinelos Mete+Tabaco</h3>
+            <p>39.99€</p>
+        </div></a>
+
+        </section>
+        <p class="readable">Mais informações: </p><a href="https://infogram.com/venda-dos-produtos-metetabaco-1h0n25ogdepel4p?live">https://infogram.com/venda-dos-produtos-metetabaco-1h0n25ogdepel4p?live</a>
+        </section>
     </main>
 
     <footer>
@@ -302,15 +339,6 @@
         </div>
         <li><a href="loja.html">Loja</a></li>
     </ul>
-  </div>
-</body>
-</html>
-    </ul>
-  </div>
-
-  <div class="overlay" id="overlay">
-        <span class="close" onclick="closeFullView()">&times;</span>
-        <img src="" alt="Full View" id="fullImage">
   </div>
 
   <script>
